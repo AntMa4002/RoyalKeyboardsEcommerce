@@ -8,14 +8,14 @@ interface Props {
 }
 
 export const Product = (props: Props) => {
-  const { _id, productName, description, price, stockQuantity, imageURL } =
+  const { _id, productName, description, price, stockQuantity, imageURL, tag } =
     props.product;
   const { addToCart, getCartItemCount } = useContext<IShopContext>(ShopContext);
 
   const cartItemCount = getCartItemCount(_id);
 
   return (
-    <div className="product">
+    <div className={tag}>
       <img className="rounded" src={imageURL} />
       <div className="description">
         <h3 className="h3">{productName}</h3>

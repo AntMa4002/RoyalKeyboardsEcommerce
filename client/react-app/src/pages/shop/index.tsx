@@ -14,7 +14,7 @@ export const ShopPage = () => {
     <div className="shop">
       <img src="./images/maxresdefault.jpg" />
       <br></br>
-      <h1 id="all">All Products</h1>
+      <h1 id="--prod-tag: filter button state">All Products</h1>
       <div className="products scale-up-center">
         {products.map((product) => (
           <Product product={product} />
@@ -23,3 +23,6 @@ export const ShopPage = () => {
     </div>
   );
 };
+
+
+// --prod-tag: filter button state

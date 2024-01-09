@@ -16,7 +16,7 @@
     max-width: 100%;
   }
   
-  .product {
+  .Product {
     width: 300px;
     height: 300px;
     margin-top: 230px;
@@ -27,12 +27,12 @@
     
   }
   
-  .product .description {
+  .Product .description {
     text-align: center;
     margin-top: 15px;
   }
 
-  .product:hover {
+  .Product:hover {
     transition: 0.3s ease-in;
   }
   
