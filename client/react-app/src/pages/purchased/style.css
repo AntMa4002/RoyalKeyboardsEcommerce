@@ -1,0 +1,27 @@
+.purchased-items-page {
+  text-align: center;
+}
+
+.purchased-items {
+    margin-top: 100px;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    place-items: center;
+  }
+  
+  .purchased-items .item {
+    width: 225px;
+    height: 225px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .purchased-items .item img {
+    width: 100%;
+  }
