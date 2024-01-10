@@ -20,6 +20,11 @@ export interface IShopContext {
   purchasedItems: IProduct[];
   isAuthenticated: boolean;
   setIsAuthenticated: (isAuthenticated: boolean) => void;
+  filter: string[];
+  setFilter: (filter: string[]) => void;
+  handleFilterChange: (value: string) => void;
+  isFiltered: boolean;
+  handleRadioChange: (filter: boolean) => void;
 }
 
 const defaultVal: IShopContext = {
@@ -35,6 +40,11 @@ const defaultVal: IShopContext = {
   purchasedItems: [],
   isAuthenticated: null,
   setIsAuthenticated: () => null,
+  filter: [],
+  setFilter: () => null,
+  handleFilterChange: () => null,
+  isFiltered: null,
+  handleRadioChange: () => null,
 };
 
 export const ShopContext = createContext<IShopContext>(defaultVal);
@@ -48,6 +58,8 @@ export const ShopContextProvider = (props) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(
     cookies.access_token !== null
   );
+  const [isFiltered, setIsFiltered] = useState<boolean>(false);
+  const [filter, setFilter] = useState<string[]>([]);
 
   const { products, fetchProducts } = useGetProducts();
   const { headers } = useGetToken();
@@ -179,6 +191,21 @@ export const ShopContextProvider = (props) => {
     }
   };
 
+  const handleFilterChange = (value: string) => {
+    if (filter.includes(value)) {
+      setFilter(filter.filter((item) => item !== value));
+    } else {
+      setFilter([...filter, value]);
+    }
+  };
+
+  const handleRadioChange = (filtered: boolean) => {
+    if (!filtered) {
+      setFilter([]);
+    }
+    setIsFiltered(filtered);
+  };
+
   useEffect(() => {
     if (isAuthenticated) {
       fetchAvailableMoney();
@@ -207,6 +234,11 @@ export const ShopContextProvider = (props) => {
     purchasedItems,
     isAuthenticated,
     setIsAuthenticated,
+    filter,
+    setFilter,
+    handleFilterChange,
+    isFiltered,
+    handleRadioChange,
   };
   return (
     <ShopContext.Provider value={contextValue}>

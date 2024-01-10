@@ -60,10 +60,6 @@ router.post("/checkout", verifyToken, async (req: Request, res: Response) => {
     user.purchasedItems.push(...productIDs);
 
     await user.save();
-    // await ProductModel.updateMany(
-    //   { _id: { $in: productIDs } },
-    //   { $inc: { stockQuantity: cartItems[item] } }
-    // );
 
     res.json({ purchasedItems: user.purchasedItems });
   } catch (err) {

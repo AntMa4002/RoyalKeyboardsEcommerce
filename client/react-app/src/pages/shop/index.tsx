@@ -3,26 +3,34 @@ import { useGetProducts } from "../../hooks/useGetProducts";
 import { Product } from "./product";
 import { IShopContext, ShopContext } from "../../context/shop-context";
 import { Navigate } from "react-router-dom";
+import { Filter } from "../../components/Filter";
+import "./style.css";
 
 export const ShopPage = () => {
   const { products } = useGetProducts();
-  const { isAuthenticated } = useContext<IShopContext>(ShopContext);
+  const { isAuthenticated, isFiltered, filter } =
+    useContext<IShopContext>(ShopContext);
   if (!isAuthenticated) {
     return <Navigate to="/auth" />;
   }
   return (
     <div className="shop">
-      <img src="./images/maxresdefault.jpg" />
-      <br></br>
-      <h1 id="--prod-tag: filter button state">All Products</h1>
+      <img className="fade-in" src="./images/maxresdefault.jpg" />
+      <h1 id="title1" className="fade-in">
+        Products
+      </h1>
+      <div id="filter-container">
+        <Filter />
+      </div>
       <div className="products scale-up-center">
-        {products.map((product) => (
-          <Product product={product} />
-        ))}
+        {!isFiltered
+          ? products.map((product) => <Product product={product} />)
+          : products
+              .filter((product) => filter.includes(product.tag))
+              .map((product) => <Product product={product} />)}
       </div>
     </div>
   );
 };
 
-
-// --prod-tag: filter button state
+// {products.filter((product) => filter.includes(product.tag)).map((product) => (<Product product={product} />))}

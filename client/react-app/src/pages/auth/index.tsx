@@ -10,9 +10,9 @@ export const AuthPage = () => {
     <div>
       <div className="flex-container">
         <div className="image-container">
-          <img id="vert-img" src="./images/wp5769406.png" />
+          <img id="vert-img" className="fade-in" src=".\images\wp5769406.png" />
         </div>
-        <div className="content">
+        <div className="content fade-in">
           <Register />
           <Login />
         </div>
@@ -43,7 +43,7 @@ const Register = () => {
   };
 
   return (
-    <div className="auth-container">
+    <div className="auth-container ">
       <form className="forms" onSubmit={handleSubmit}>
         <h2>Register</h2>
         <div className="mb-3">
