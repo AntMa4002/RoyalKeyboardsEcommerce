@@ -15,7 +15,7 @@ router.get("/", verifyToken, async (_, res: Response) => {
   }
 });
 
-//bug possilby here
+//bug here
 router.post("/checkout", verifyToken, async (req: Request, res: Response) => {
   const { customerID, cartItems } = req.body;
 
