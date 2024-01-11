@@ -4,7 +4,6 @@ export interface IUser {
   _id?: string;
   username: string;
   password: string;
-  //can be removed later on for the paypal API
   availableMoney: number;
   purchasedItems: string[];
 }

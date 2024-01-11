@@ -32,5 +32,3 @@ export const ShopPage = () => {
     </div>
   );
 };
-
-// {products.filter((product) => filter.includes(product.tag)).map((product) => (<Product product={product} />))}
