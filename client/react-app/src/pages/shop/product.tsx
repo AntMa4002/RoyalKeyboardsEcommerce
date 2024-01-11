@@ -27,7 +27,10 @@ export const Product = (props: Props) => {
           {stockQuantity < 10 && (
             <p className="h6">Only {stockQuantity} left in stock!</p>
           )}
-          <button className="btn btn-primary" onClick={() => addToCart(_id)}>
+          <button
+            className="btn btn-primary addie"
+            onClick={() => addToCart(_id)}
+          >
             Add To Cart {cartItemCount > 0 && <> ({cartItemCount})</>}
           </button>
         </>

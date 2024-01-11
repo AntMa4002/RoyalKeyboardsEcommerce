@@ -15,7 +15,6 @@ router.get("/", verifyToken, async (_, res: Response) => {
   }
 });
 
-//bug here
 router.post("/checkout", verifyToken, async (req: Request, res: Response) => {
   const { customerID, cartItems } = req.body;
 
@@ -47,10 +46,6 @@ router.post("/checkout", verifyToken, async (req: Request, res: Response) => {
       }
 
       totalPrice += product.price * cartItems[item];
-      await ProductModel.updateOne(
-        { _id: product, stockQuantity: { $gte: cartItems[item] } },
-        { $inc: { stockQuantity: -cartItems[item] } }
-      );
     }
 
     if (user.availableMoney < totalPrice) {
@@ -61,6 +56,15 @@ router.post("/checkout", verifyToken, async (req: Request, res: Response) => {
     user.purchasedItems.push(...productIDs);
 
     await user.save();
+
+    for (const item in cartItems) {
+      const products = await ProductModel.find({ _id: { $in: productIDs } });
+      const product = products.find((product) => String(product._id) === item);
+      await ProductModel.updateOne(
+        { _id: product, stockQuantity: { $gte: cartItems[item] } },
+        { $inc: { stockQuantity: -cartItems[item] } }
+      );
+    }
 
     res.json({ purchasedItems: user.purchasedItems });
   } catch (err) {

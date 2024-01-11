@@ -71,11 +71,14 @@
 
 .product .description {
   text-align: center;
-  margin-top: 15px;
 }
 
 .product:hover {
   transition: 0.3s ease-in;
+}
+
+.addie {
+  margin-bottom: 15px;
 }
 
 .scale-up-center {
