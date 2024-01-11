@@ -19,7 +19,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 80px 0;
+  margin: 130px 0;
 }
 
 .purchased-items .item img {
@@ -32,6 +32,14 @@
 
 #pur-img {
   width: 100%;
+}
+
+.btn {
+  margin-bottom: 10px;
+}
+
+.stockQuantity {
+  margin-bottom: 10px;
 }
 
 .swing-in-top-fwd {

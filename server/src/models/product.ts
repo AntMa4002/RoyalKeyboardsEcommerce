@@ -6,6 +6,8 @@ export interface IProduct {
   description: string;
   imageURL: string;
   stockQuantity: number;
+  tag: string;
+  purchaseDate: string;
 }
 
 const ProductSchema = new Schema<IProduct>({
@@ -22,6 +24,8 @@ const ProductSchema = new Schema<IProduct>({
     required: true,
     min: [0, "Stock quantity cannot be lower than 0."],
   },
+  tag: { type: String, required: true },
+  purchaseDate: { type: String, required: true },
 });
 
 export const ProductModel = model<IProduct>("product", ProductSchema);

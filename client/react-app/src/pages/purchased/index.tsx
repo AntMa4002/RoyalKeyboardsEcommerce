@@ -28,6 +28,7 @@ export const PurchasedPage = () => {
                   )}
                   <button
                     className="btn btn-primary"
+                    id="buuu"
                     onClick={() => addToCart(item._id)}
                   >
                     Purchase Again{" "}
@@ -39,6 +40,7 @@ export const PurchasedPage = () => {
                   <h1>OUT OF STOCK</h1>
                 </div>
               )}
+              <p className="h6">Last purchased on {item.purchaseDate}</p>
             </div>
           );
         })}

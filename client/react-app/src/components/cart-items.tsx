@@ -31,7 +31,11 @@ export const CartItem = (props: Props) => {
             onChange={(e) => updateCartItemCount(Number(e.target.value), _id)}
             max={stockQuantity}
           />
-          <button className="btn btn-primary" onClick={() => addToCart(_id)}>
+          <button
+            className="btn btn-primary"
+            id="buuu"
+            onClick={() => addToCart(_id)}
+          >
             +
           </button>
         </div>

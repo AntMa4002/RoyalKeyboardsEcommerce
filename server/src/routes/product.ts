@@ -57,12 +57,28 @@ router.post("/checkout", verifyToken, async (req: Request, res: Response) => {
 
     await user.save();
 
+    const currentDate = new Date();
+    const currentDateOnly = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth(),
+      currentDate.getDate()
+    );
+
+    const formattedDate = currentDateOnly.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    });
+
     for (const item in cartItems) {
       const products = await ProductModel.find({ _id: { $in: productIDs } });
       const product = products.find((product) => String(product._id) === item);
       await ProductModel.updateOne(
         { _id: product, stockQuantity: { $gte: cartItems[item] } },
-        { $inc: { stockQuantity: -cartItems[item] } }
+        {
+          $inc: { stockQuantity: -cartItems[item] },
+          $set: { purchaseDate: formattedDate },
+        }
       );
     }
 

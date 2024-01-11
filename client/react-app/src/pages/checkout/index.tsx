@@ -32,7 +32,7 @@ export const CheckoutPage = () => {
             <button className="btn btn-secondary" onClick={() => navigate("/")}>
               Continue Shopping
             </button>
-            <button className="btn btn-primary" onClick={checkout}>
+            <button className="btn btn-primary" id="buuu" onClick={checkout}>
               Checkout
             </button>
           </div>

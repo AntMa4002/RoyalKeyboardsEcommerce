@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { IProduct } from "../../models/interfaces";
-import { IShopContext, ShopContext } from "../../context/shop-context";
+import { IProduct } from "../models/interfaces";
+import { IShopContext, ShopContext } from "../context/shop-context";
 
 interface Props {
   product: IProduct;
@@ -18,7 +18,7 @@ export const Product = (props: Props) => {
       <img className="rounded" src={imageURL} />
       <div className="description">
         <h3 className="h3">{productName}</h3>
-        <p className="h5">{description}</p>
+        <p className="h6">{description}</p>
         <p className="h4">${price.toFixed(2)}</p>
       </div>
 

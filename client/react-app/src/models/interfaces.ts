@@ -6,4 +6,5 @@ export interface IProduct {
   imageURL: string;
   stockQuantity: number;
   tag: string;
+  purchaseDate: string;
 }

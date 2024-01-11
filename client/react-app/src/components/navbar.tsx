@@ -17,7 +17,7 @@ export const Navbar = () => {
   };
   return (
     <div className="fade-in">
-      <nav className="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+      <nav className="navbar navbar-expand-lg navyy" data-bs-theme="dark">
         <div className="container-fluid">
           <h1 id="title">Royal Keyboards</h1>
           {isAuthenticated && (

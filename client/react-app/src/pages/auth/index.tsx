@@ -33,11 +33,17 @@ const Register = () => {
         password,
       });
       alert("Registration Completed! Now Login.");
+      setUsername("");
+      setPassword("");
     } catch (err) {
       if (err?.response?.data?.type === UserErrors.USERNAME_ALREADY_EXISTS) {
         alert("ERROR: Username already exists");
+        setUsername("");
+        setPassword("");
       } else {
         alert("ERROR: Something went wrong.");
+        setUsername("");
+        setPassword("");
       }
     }
   };

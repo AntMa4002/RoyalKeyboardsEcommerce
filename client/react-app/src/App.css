@@ -48,8 +48,35 @@
   max-width: 100%;
 }
 
+.navyy {
+  background: rgb(36, 2, 220);
+  background: linear-gradient(
+    90deg,
+    rgba(36, 2, 220, 1) 24%,
+    rgba(109, 0, 255, 1) 80%
+  );
+}
+
+#buuu {
+  background-color: #6d00ff;
+  border-color: #6d00ff;
+}
+
+#buuu:hover {
+  background-color: #4700a5;
+}
+
 .navbar.navbar-expand-lg.bg-primary {
   width: 100%;
+}
+
+#buu {
+  background-color: #6d00ff;
+  border-color: #6d00ff;
+}
+
+#buu:hover {
+  background-color: #4700a5;
 }
 
 .fade-in {
