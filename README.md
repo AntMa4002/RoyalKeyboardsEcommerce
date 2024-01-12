@@ -1,7 +1,7 @@
 # RoyalKeyboardsEcommerce
+An Ecommerce website that utilizes the MERN Stack
 
 ## Abstract
-An Ecommerce website that utilizes the MERN Stack
 
 ### Technologies Used
 TypeScript, MongoDB, Twingate, AWS(EC2), Express, React, Ts-node, Bcrypt, Jsonwebtoken, HTML, CSS, Bootstrap
