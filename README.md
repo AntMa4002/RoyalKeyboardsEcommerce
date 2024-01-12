@@ -4,7 +4,7 @@
 An Ecommerce website that utilizes the MERN Stack.
 
 ### Technologies Used
-TypeScript, MongoDB, Twingate, AWS(EC2), Express, React, Ts-node, Bcrypt, Jsonwebtoken, HTML, CSS, Bootstrap
+TypeScript, MongoDB, Twingate, AWS(EC2), Express, React, node, Bcrypt, JWT, HTML, CSS, Bootstrap
 
 ### Authentication page
 <p align='center'><img src="https://github.com/AntMa4002/RoyalKeyboardsEcommerce/blob/main/demo/Authentication%20Page.png" width="80%"></p>
