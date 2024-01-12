@@ -40,8 +40,7 @@ This project utilizes MongoDB to store users and products in their own respectiv
 There are several ways to access the database but in this project we use a connection string. You can also create your own .env file to store the connection string or you may choose to use the string directly.
 
 **Product Collection**
-For the product page, you may choose to add your own products to the database but if you wish to use the same products used in this project, the text file named "ProductDocuments.txt" contains all the documents in an array so you can easily insert it into the database like so:
-<p align='center'><img src="https://github.com/AntMa4002/RoyalKeyboardsEcommerce/blob/main/demo/Purchased%20Items%20Page.PNG" width="60%"></p>
+For the product page, you may choose to add your own products to the database but if you wish to use the same products used in this project, the text file named "ProductDocuments.txt" contains all the documents in an array so you can easily insert it into the database.
 
 ## Configuration
 
