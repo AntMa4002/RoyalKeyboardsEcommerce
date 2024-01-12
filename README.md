@@ -24,7 +24,7 @@ TypeScript, MongoDB, Twingate, AWS(EC2), Express, React, Ts-node, Bcrypt, Jsonwe
 <p align='center'><img src="https://github.com/AntMa4002/RoyalKeyboardsEcommerce/blob/main/demo/Purchased%20Items%20Page.PNG" width="80%"></p>
 
 ## Preparation
-This project utilizes MongoDB to store users and products in their own respective collections within the database. To operate this database remotely, Twingate is used to host a remote network that utilizes a AWS EC2 instance as it's provider. It is entirely possible to operate this website without the use of Twingate as you may choose to use the IP address of your computer instead and both options are equally viable.
+This project utilizes MongoDB to store users and products in their own respective collections within the database. To operate this database remotely, Twingate is used to host a remote network that utilizes an AWS EC2 instance as it's provider. It is entirely possible to operate this website without the use of Twingate as you may choose to use the IP address of your machine instead and both options are equally viable.
 
 **With Twingate**
 1. Create a Twingate remote network
