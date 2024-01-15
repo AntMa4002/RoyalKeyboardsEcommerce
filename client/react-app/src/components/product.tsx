@@ -36,7 +36,7 @@ export const Product = (props: Props) => {
         </>
       ) : (
         <div className="stockQuantity">
-          <h1>OUT OF STOCK</h1>
+          <h2>OUT OF STOCK</h2>
         </div>
       )}
     </div>
